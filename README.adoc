@@ -26,6 +26,30 @@ JCache Hazelcast Examples
 
 toc::[]
 
+=== Map vs Cache
+
+`java.util.Map` (Java 6/7)
+
+* Key-Value Based API
+* Supports Atomic Updates
+* Entries Don't Expire
+* Entries Aren't Evicted
+* Entries Stored On-Heap
+* Store-By-Reference
+
+`javax.cache.Cache` (Java 6)
+
+* Key-Value Based API
+* Supports Atomic Updates
+* Entries May Expire
+* Entries May Be Evicted
+* Entries Stored Anywhere (ie: topologies)
+* Store-By-Value and Store-By-Reference
+* Supports Integration (ie: Loaders/Writers)
+* Supports Observation (ie: Listeners)
+* Entry Processors
+* Statistics
+
 === Run your Hazelcast application
 
 ----

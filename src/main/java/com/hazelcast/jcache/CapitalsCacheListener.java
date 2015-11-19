@@ -37,7 +37,9 @@ public class CapitalsCacheListener {
                 .setTypes(String.class, String.class);
 
         // Create the cache
-        Cache<String, String> cache = manager.createCache("capitals", cacheConfig);
+        // Cache<String, String> cache = manager.createCache("capitals", cacheConfig);
+
+        Cache<String, String> cache = manager.getCache("capitals", String.class, String.class);
 
         // Create the Listener
 
@@ -65,6 +67,7 @@ public class CapitalsCacheListener {
         cache.put("Spain", "Madrid");
         cache.put("Belgium", "Brussels");
         cache.put("Germany", "Berlin");
+        cache.put("UK", "Manchester");
 
     }
 

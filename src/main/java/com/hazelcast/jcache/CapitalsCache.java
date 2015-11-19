@@ -50,7 +50,7 @@ public class CapitalsCache {
         System.out.println("JCache Capital of Belgium is : " + cache.get("Belgium"));
 
         // Unwrap to the Vendor API if you need to...(Hazelcast in this instance)
-        ICache<String,String> iCache = cache.unwrap(ICache.class);
+        ICache<String, String> iCache = cache.unwrap(ICache.class);
         System.out.println("Cache size is : " + iCache.size());
 
         //cachingProvider.close();
