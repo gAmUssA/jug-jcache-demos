@@ -1,4 +1,4 @@
-plugins{
+plugins {
     id 'java'
     id 'idea'
     id 'eclipse'
@@ -10,7 +10,7 @@ group = 'com.hazelcast.starter'
 version = '1.0-SNAPSHOT'
 
 description = """
-Hazelcast Starter project for Gradle Users
+Code samples from 'Distributed Caching with JCache and beyond' talk series
 """
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -41,7 +41,7 @@ repositories {
 dependencies {
 
     compile "com.hazelcast:hazelcast:$HZ_VERSION"
-    compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
+    //compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-client-new:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-wm:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-spring:$HZ_VERSION"
@@ -55,11 +55,16 @@ dependencies {
     // JCache dependency
     compile "javax.cache:cache-api:1.0.0"
 
+    // ehcache
+    /*compile 'org.ehcache:jcache:1.0.1'
+    compile "org.slf4j:slf4j-api:1.7.12"
+    compile "ch.qos.logback:logback-classic:1.1.3"*/
+
 
     def springVersion = "4.2.3.RELEASE"
-    compile "org.springframework:spring-core:$springVersion"
+    /*compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
-    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.springframework:spring-context-support:$springVersion"*/
 
     // Hazelcast Test Support
     testCompile "com.hazelcast:hazelcast:$HZ_VERSION:tests"

@@ -44,16 +44,18 @@ public class CapitalsCacheListener {
         // Create the Listener
 
         //You can put CacheEntryEventFilter in here as well...
+        final Factory<MyCacheEntryListener> myCacheEntryListenerFactory =
+            FactoryBuilder.factoryOf(MyCacheEntryListener.class);
         CacheEntryListenerConfiguration listenerConfigurationWithFilter =
             new MutableCacheEntryListenerConfiguration(
-                FactoryBuilder.factoryOf(MyCacheEntryListener.class),
+                myCacheEntryListenerFactory,
                 FactoryBuilder.factoryOf(MyCacheEntryEventFilter.class),
                 IS_OLD_VALUE_REQUIRED,
                 IS_SYNCHRONOUS);
 
         CacheEntryListenerConfiguration listenerConfiguration =
             new MutableCacheEntryListenerConfiguration(
-                FactoryBuilder.factoryOf(MyCacheEntryListener.class),
+                myCacheEntryListenerFactory,
                 NO_FILTER,
                 IS_OLD_VALUE_REQUIRED,
                 IS_SYNCHRONOUS);

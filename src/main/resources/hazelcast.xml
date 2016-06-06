@@ -37,4 +37,14 @@
         <statistics-enabled>true</statistics-enabled>
     </cache>
 
+    <quorum enabled="true" name="cache-quorum">
+        <quorum-size>2</quorum-size>
+        <quorum-type>READ_WRITE</quorum-type>
+    </quorum>
+
+    <!-- quorum example -->
+    <cache name="cache-with-quorum">
+        <statistics-enabled>true</statistics-enabled>
+        <quorum-ref>cache-quorum</quorum-ref>
+    </cache>
 </hazelcast>

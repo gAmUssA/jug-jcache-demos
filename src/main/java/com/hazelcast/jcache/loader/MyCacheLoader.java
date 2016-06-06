@@ -22,8 +22,8 @@ public class MyCacheLoader implements CacheLoader<String, String> {
     public Map<String, String> loadAll(Iterable<? extends String> keys)
         throws CacheLoaderException {
 
-        // Iterate the keys and maybe batch load from a DB, a Filesystem or some other System completely.
+        // Iterate the keys and maybe batch load from a DB,
+        // a Filesystem or some other System completely.
         return null;
-
     }
 }

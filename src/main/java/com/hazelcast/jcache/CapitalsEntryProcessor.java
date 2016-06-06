@@ -8,6 +8,8 @@ import javax.cache.Caching;
 import javax.cache.configuration.MutableConfiguration;
 import javax.cache.processor.EntryProcessor;
 import javax.cache.spi.CachingProvider;
+import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * Caching Provider Example
@@ -45,10 +47,13 @@ public class CapitalsEntryProcessor {
         // Convert Capitals to Upper Case
         EntryProcessor<String, String, Object> entryProcessor =
             new UpperCaseEntryProcessor();
-        cache.invoke("Belgium", entryProcessor);
+        HashSet<String> keys = new HashSet<>(Arrays.asList("Belgium", "UK"));
+
+        cache.invokeAll(keys, entryProcessor);
 
         // Now Check capital
         System.out.println("Capital of Belgium is : " + cache.get("Belgium"));
+        System.out.println("Capital of UK is : " + cache.get("UK"));
 
     }
 

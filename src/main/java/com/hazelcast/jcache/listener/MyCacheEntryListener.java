@@ -12,20 +12,18 @@ public class MyCacheEntryListener implements CacheEntryCreatedListener<String, S
     CacheEntryUpdatedListener<String, String> {
 
     public void onCreated(
-        Iterable<CacheEntryEvent<? extends String, ? extends String>> cacheEntryEvents)
+        Iterable<CacheEntryEvent<String,String>> cacheEntryEvents)
         throws CacheEntryListenerException {
         for (CacheEntryEvent entryEvent : cacheEntryEvents) {
-            System.out.println(
-                "Created : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
+            System.out.println("Created : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
         }
     }
 
     public void onUpdated(
-        Iterable<CacheEntryEvent<? extends String, ? extends String>> cacheEntryEvents)
+        Iterable<CacheEntryEvent<String,String>> cacheEntryEvents)
         throws CacheEntryListenerException {
         for (CacheEntryEvent entryEvent : cacheEntryEvents) {
-            System.out.println(
-                "Updated : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
+            System.out.println("Updated : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
         }
     }
 }
