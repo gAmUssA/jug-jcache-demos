@@ -4,7 +4,6 @@ import com.hazelcast.jcache.spring.AppConfig;
 import com.hazelcast.jcache.spring.IDummyBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.SystemEnvironmentPropertySource;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +26,11 @@ public class SpringCacheManager {
         long start2 = System.nanoTime();
         city = dummy.getCity();
         long end2 = System.nanoTime();
+        System.out.println("Second call tool: " + TimeUnit.NANOSECONDS.toMillis(end2 - start2) + " millis");
+
+        start2 = System.nanoTime();
+        city = dummy.getCity();
+        end2 = System.nanoTime();
         System.out.println("Second call tool: " + TimeUnit.NANOSECONDS.toMillis(end2 - start2) + " millis");
 
     }

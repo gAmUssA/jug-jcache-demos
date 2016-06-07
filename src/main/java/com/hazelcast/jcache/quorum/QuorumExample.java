@@ -1,7 +1,6 @@
 package com.hazelcast.jcache.quorum;
 
 import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
 
 import javax.cache.Cache;
 import javax.cache.CacheManager;

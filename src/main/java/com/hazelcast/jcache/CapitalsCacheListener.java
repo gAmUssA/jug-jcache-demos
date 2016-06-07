@@ -10,6 +10,8 @@ import javax.cache.configuration.*;
 import javax.cache.event.CacheEntryEventFilter;
 import javax.cache.spi.CachingProvider;
 
+import static javax.cache.configuration.FactoryBuilder.factoryOf;
+
 /**
  * Cache Data Example
  */

@@ -9,6 +9,8 @@ import javax.cache.Caching;
 import javax.cache.configuration.MutableConfiguration;
 import javax.cache.spi.CachingProvider;
 
+import static java.lang.System.out;
+
 /**
  * Cache Data Example
  */
@@ -47,11 +49,11 @@ public class CapitalsCache {
         cache.put("Germany", "Berlin");
 
         // I forgot, whats the Capital of Belgium?
-        System.out.println("JCache Capital of Belgium is : " + cache.get("Belgium"));
+        out.println("JCache Capital of Belgium is : " + cache.get("Belgium"));
 
         // Unwrap to the Vendor API if you need to...(Hazelcast in this instance)
         ICache<String, String> iCache = cache.unwrap(ICache.class);
-        System.out.println("Cache size is : " + iCache.size());
+        out.println("Cache size is : " + iCache.size());
 
         //cachingProvider.close();
     }

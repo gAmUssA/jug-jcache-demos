@@ -10,8 +10,8 @@ public class CacheTest {
     public static void main(String[] args) {
         System.setProperty("hazelcast.jcache.provider.type", "client");
 
-        CachingProvider cachingProvider = Caching.getCachingProvider();
-        CacheManager cacheManager = cachingProvider.getCacheManager();
+        final CachingProvider cachingProvider = Caching.getCachingProvider();
+        final CacheManager cacheManager = cachingProvider.getCacheManager();
         Cache<Integer, String> cache = cacheManager.getCache("test", Integer.class, String.class);
         cache.put(1, "Tokyo");
         cache.put(2, "Paris");

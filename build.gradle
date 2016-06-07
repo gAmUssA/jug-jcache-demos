@@ -41,7 +41,7 @@ repositories {
 dependencies {
 
     compile "com.hazelcast:hazelcast:$HZ_VERSION"
-    //compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
+    compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-client-new:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-wm:$HZ_VERSION"
     // compile "com.hazelcast:hazelcast-spring:$HZ_VERSION"
@@ -62,9 +62,9 @@ dependencies {
 
 
     def springVersion = "4.2.3.RELEASE"
-    /*compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
-    compile "org.springframework:spring-context-support:$springVersion"*/
+    compile "org.springframework:spring-context-support:$springVersion"
 
     // Hazelcast Test Support
     testCompile "com.hazelcast:hazelcast:$HZ_VERSION:tests"
