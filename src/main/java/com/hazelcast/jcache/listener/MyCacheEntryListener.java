@@ -9,21 +9,20 @@ import javax.cache.event.CacheEntryUpdatedListener;
  * Example of an Created Entry Listener
  */
 public class MyCacheEntryListener
-    implements CacheEntryCreatedListener<String, String>, CacheEntryUpdatedListener<String, String> {
+    implements CacheEntryCreatedListener<String, String>,
+    CacheEntryUpdatedListener<String, String> {
 
-
-
-    @Override public void onCreated(Iterable<CacheEntryEvent<? extends String, ? extends String>> cacheEntryEvents)
+    @Override public void onCreated(Iterable<CacheEntryEvent<? extends String, ? extends String>> events)
         throws CacheEntryListenerException {
-        for (CacheEntryEvent entryEvent : cacheEntryEvents) {
-            System.out.println("Created : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
+        for (CacheEntryEvent event : events) {
+            System.out.println("Created : " + event.getKey() + " with value : " + event.getValue());
         }
     }
 
-    @Override public void onUpdated(Iterable<CacheEntryEvent<? extends String, ? extends String>> cacheEntryEvents)
+    @Override public void onUpdated(Iterable<CacheEntryEvent<? extends String, ? extends String>> events)
         throws CacheEntryListenerException {
-        for (CacheEntryEvent entryEvent : cacheEntryEvents) {
-            System.out.println("Updated : " + entryEvent.getKey() + " with value : " + entryEvent.getValue());
+        for (CacheEntryEvent event : events) {
+            System.out.println("Updated : " + event.getKey() + " with value : " + event.getValue());
         }
     }
 }

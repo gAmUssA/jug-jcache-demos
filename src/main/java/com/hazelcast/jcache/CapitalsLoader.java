@@ -8,6 +8,8 @@ import javax.cache.Caching;
 import javax.cache.configuration.FactoryBuilder;
 import javax.cache.configuration.MutableConfiguration;
 import javax.cache.spi.CachingProvider;
+import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * Cache Data Example
@@ -37,15 +39,10 @@ public class CapitalsLoader {
         // Create the cache
         Cache<String, String> cache = manager.createCache("capitals", cacheConfig);
 
-        // Enter some Capitals
-        cache.put("UK", "London");
-        cache.put("France", "Paris");
-        cache.put("Spain", "Madrid");
-        cache.put("Belgium", "Brussels");
-        cache.put("Germany", "Berlin");
-
         // I forgot, what's the Capital of Portugal?
         System.out.println("Capital of Portugal is : " + cache.get("Portugal"));
+        System.out
+            .println("Capitals of UK and France are: " + cache.getAll(new HashSet<>(Arrays.asList("UK", "France"))));
 
     }
 

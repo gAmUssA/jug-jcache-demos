@@ -6,9 +6,6 @@ import org.springframework.cache.jcache.JCacheCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.cache.Caching;
-import javax.cache.spi.CachingProvider;
-
 /**
  * Spring Configuration for Spring JCache example
  */
@@ -18,13 +15,11 @@ public class AppConfig {
 
     @Bean
     public CacheManager cacheManager() {
-        CachingProvider cachingProvider = Caching.getCachingProvider();
-        javax.cache.CacheManager cacheManager = cachingProvider.getCacheManager();
-        return new JCacheCacheManager(cacheManager);
+        return new JCacheCacheManager();
     }
 
     @Bean
-    public IDummyBean dummyBean(){
+    public IDummyBean dummyBean() {
         return new DummyBean();
     }
 }

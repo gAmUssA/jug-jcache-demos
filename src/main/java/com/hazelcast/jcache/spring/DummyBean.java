@@ -12,6 +12,6 @@ public class DummyBean implements IDummyBean {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "Ankara";
+        return "Tallinn";
     }
 }

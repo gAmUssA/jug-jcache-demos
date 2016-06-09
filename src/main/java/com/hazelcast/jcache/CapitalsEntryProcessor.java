@@ -5,7 +5,6 @@ import com.hazelcast.jcache.processor.UpperCaseEntryProcessor;
 import javax.cache.Cache;
 import javax.cache.CacheManager;
 import javax.cache.Caching;
-import javax.cache.configuration.MutableConfiguration;
 import javax.cache.processor.EntryProcessor;
 import javax.cache.spi.CachingProvider;
 import java.util.Arrays;
@@ -29,13 +28,14 @@ public class CapitalsEntryProcessor {
         CacheManager manager = cachingProvider.getCacheManager();
 
         // Define a cache
-        MutableConfiguration<String, String> cacheConfig =
+        /*MutableConfiguration<String, String> cacheConfig =
             new MutableConfiguration<String, String>()
                 .setStoreByValue(true)
                 .setTypes(String.class, String.class);
 
         // Create the cache
-        Cache<String, String> cache = manager.createCache("capitals", cacheConfig);
+        Cache<String, String> cache = manager.createCache("capitals", cacheConfig);*/
+        final Cache<String, String> cache = manager.getCache("capitals", String.class, String.class);
 
         // Enter some Capitals
         cache.put("UK", "London");
